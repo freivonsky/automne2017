@@ -1,0 +1,43 @@
+/**
+ * @author Prénom Nom courriel
+ * @todo Personnaliser les variables selon les specs
+**/
+
+/** Polices de caractères **/
+$fonteTitres: 'Franklin', sans-serif;
+
+/** Palette de couleurs **/
+// Utiliser http://chir.ag/projects/name-that-color pour obtenir
+// des noms uniques et mémorisables
+// Permettez-vous d'utiliser un nom de variable plus explicite si la suggestion de name-that-color est trop bizarre
+$jauneCitron: #ebe111;
+$aubergine: #63088c;
+
+// définir la  palette avec des variables tel que:
+$dominante: $jauneCitron;
+$secondaire: $aubergine;
+/*
+$accent1:
+$accent2:
+$texte:
+$texteInverse:
+*/
+
+
+/** ajouter des variantes
+* rgba($red, $green, $blue, $alpha)
+*/
+
+/** Points de rupture **/
+/* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
+$mobilePortrait : 320px;
+/* smartphones, Android phones, landscape iPhone */
+$mobilePaysage : 480px;
+/* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */
+$tablettePortrait : 600px;
+/* tablet, landscape iPad, lo-res laptops ands desktops */
+$tablettePaysage : 801px;
+/* big landscape tablets, laptops, and desktops */
+$desktop : 1025px;
+/* hi-res laptops and desktops */
+$desktopLarge : 1281px;

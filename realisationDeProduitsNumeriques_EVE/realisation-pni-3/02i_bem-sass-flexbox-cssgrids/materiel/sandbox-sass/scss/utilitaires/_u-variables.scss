@@ -1,0 +1,18 @@
+/**
+ * @author Prénom Nom courriel
+ * @todo Personnaliser les variables selon les specs
+**/
+
+/** Polices de caractères **/
+$fonteTitres: 'Franklin', sans-serif;
+
+/** Palette de couleurs **/ 
+// lister les noms de couleurs
+$jauneCitron: #ebe111;
+$aubergine: #63088c;
+// définir la palette selon le role
+$dominante: $jauneCitron;
+$secondaire: $aubergine; 
+
+/** Points de rupture **/ 
+$desktop : 601px; 

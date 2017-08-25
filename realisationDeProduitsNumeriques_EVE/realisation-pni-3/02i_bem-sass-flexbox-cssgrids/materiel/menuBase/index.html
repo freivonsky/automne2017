@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+
+    <title>Menu mobile accessible</title>
+    <!--URL de base pour la navigation : racine "./" -->
+    <base href="./"/>
+
+    <link rel="stylesheet" href="css/_normalize.css">
+    <link rel="stylesheet" href="css/_utilitaires.css">
+    <link rel="stylesheet" href="css/_typo.css">
+    <link rel="stylesheet" href="css/_grille.css">
+    <!-- CSS à personnaliser : -->
+    <link rel="stylesheet" href="css/_menuBase.css">
+    <link rel="stylesheet" href="css/mandat.css">
+</head>
+
+<body>
+<!--http://webaim.org/techniques/skipnav/-->
+<a href="#contenu" class="visuallyhidden focusable">Allez au contenu</a>
+<header role="banner">
+    <div class="conteneur">
+        <nav class="menu menu--ferme">
+            <ul class="menu__liste">
+                <li class="menu__listeItem"><a href="index.html" class="menu__lien">Accueil</a></li>
+                <li class="menu__listeItem"><a href="pages/index.html" class="menu__lien">Niveau 1</a></li>
+                <li class="menu__listeItem"><a href="pages/niveau2/index.html" class="menu__lien">Niveau 2</a></li>
+                <li class="menu__listeItem"><a href="pages/niveau2/niveau3/index.html" class="menu__lien">Niveau 3</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<div class="conteneur rangee clearfix">
+    <main class="col col_8_de_12">
+        <h1 id="contenu">Menu mobile accessible</h1>
+        <p>Ce fichier index.html permet de démontrer le patron de conception d'un menu de navigation <em>responsive</em>
+            et accessible.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, adipisci asperiores earum eius enim, esse est
+            expedita id labore magni maxime neque nisi repellendus reprehenderit, rerum vel vero voluptatibus!
+            Molestiae!</p>
+    </main>
+    <aside class="col col_4_de_12" role="complementary">
+        <h2>Ressources</h2>
+        <dl>
+            <dt>_grille.css</dt>
+            <dd>Styles pour la mise en page</dd>
+            <dt>_menu.css</dt>
+            <dd>Styles pour le menu responsive</dd>
+            <dt>_normalize.css</dt>
+            <dd>Styles pour normaliser l'affichage des éléments</dd>
+            <dt>_typo.css</dt>
+            <dd>Styles typographiques</dd>
+            <dt>mandat.css</dt>
+            <dd>Styles particuliers à la démonstration</dd>
+        </dl>
+    </aside>
+</div><!-- fin div page -->
+<footer role="contentinfo">
+    <div class="conteneur">
+        <p>Pied de page</p>
+    </div>
+</footer>
+<script src="js/_menuBase.js"></script>
+<script>
+
+    document.body.classList.add('js');
+
+    //*******************
+    // Écouteurs d'événements
+    //*******************
+    window.addEventListener('load', function () { menu.configurerNav(); });
+
+</script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+/**
+ * ------------------
+ * TABLE DES MATIÈRES
+ * ------------------
+ * LIB
+ ** Normalize
+ ** Suzy + plugin
+ * Utilitaires
+ ** mixins
+ * MISE EN PAGE SUSY
+ */
+
+/***** LIB ******/
+@import '../../bower_components/normalize-scss/sass/normalize/import-now';
+@import '../../bower_components/susy/sass/susy';
+@import '../../bower_components/susy/sass/plugins/svg-grid';
+
+/***** Utilitaires ******/
+@import 'utilitaires/u-mixins';
+@import 'utilitaires/u-variables';
+
+
+/***** MISE EN PAGE SUSY ******/
+
+@include border-box-sizing;
+
+// Réglages de Susy
+$susy: (
+  'columns': susy-repeat(12),
+  'gutters': 0.25,
+  'spread': 'narrow',
+  'container-spread': 'narrow'
+);
+
+
+.wrap {
+  display:flex;
+  max-width:$desktop;
+  margin:0 auto;
+  background: susy-svg-grid() no-repeat scroll;
+  padding-top: 10vh;
+  @include clearfix;
+}
+
+.content {
+  flex: 1 1 span(8);
+  margin-right:span(1 wider);
+
+  height: 80vh;
+  background: rgba(113, 218, 210, 0.8);
+
+}
+
+.sidebar {
+  flex: 1 1 span(3);
+
+  height: 40vh;
+  background: rgba(250, 231, 179, 0.8);
+}
+
+h2 {
+  padding: 1rem 0;
+  text-align: center;
+}
+
+
+.inner-content-1 {
+  width:span(6 of 8);
+}
+
+.inner-inner-contents {
+  @include clearfix;
+  padding-bottom: 1rem;
+}
+
+.in-in-1,.in-in-2{
+  width:span(3 of 8);
+  float:left;
+  background-color: #cb4b16;
+}
+.in-in-1{
+  margin:0 0 0 span(1 wide of 8);
+}
+.in-in-2{
+  margin:0 span(1 wide of 8) 0 0;
+  float: right;
+}
+
+div {
+  margin-bottom: 1rem 0;
+  background: rgba(130, 145, 32, 0.4);
+}

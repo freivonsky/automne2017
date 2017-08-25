@@ -1,0 +1,69 @@
+/**
+ * ------------------
+ * TABLE DES MATIÈRES
+ * ------------------
+ * LIB
+ ** Normalize
+ ** Suzy et plugin
+ * Utilitaires
+ ** mixins
+ * MISE EN PAGE SUSY
+ */
+
+/***** LIB ******/
+@import '../../bower_components/normalize-scss/sass/normalize/import-now';
+@import '../../bower_components/susy/sass/susy';
+@import '../../bower_components/susy/sass/plugins/svg-grid';
+
+/***** Utilitaires ******/
+@import 'utilitaires/u-mixins';
+@import 'utilitaires/u-variables';
+
+@include border-box-sizing;
+
+// Réglages de Susy
+$susy: (
+  'columns': susy-repeat(4),
+  'gutters': 0.25,
+  'spread': 'narrow',
+  'container-spread': 'narrow'
+  //'container-spread': 'wide
+);
+
+.wrap {
+  display:flex;
+  /* Règles pour le centrage.
+   * Remplacer 1140px par la variable $desktop.
+   */
+  max-width: $desktop;
+  margin:0 auto;
+
+  /* Pour créer le svg de guide des colonnes */
+  background: susy-svg-grid() no-repeat scroll;
+  padding-top:10vh;
+
+  @include clearfix;
+}
+
+.content {
+  flex: span(3);
+  margin-right:gutter();
+
+  //flex: 1 1 span(2);
+  //margin:0 gutter() 0 span(1 wide);
+
+  height: 80vh;
+  background: rgba(173, 214, 218, 0.8);
+  margin-bottom: gutter();
+}
+
+.sidebar {
+  flex: span(1);
+  height: 40vh;
+  background: rgba(250, 231, 179, 0.8);
+}
+
+h2 {
+  padding: 1rem 0;
+  text-align: center;
+}

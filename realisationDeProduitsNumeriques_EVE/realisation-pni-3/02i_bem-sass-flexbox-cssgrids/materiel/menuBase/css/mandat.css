@@ -1,0 +1,33 @@
+@charset "UTF-8";
+/**
+ * @author Prénom Nom courriel
+**/
+
+/**
+ * TABLE DES MATIÈRES
+ *
+ * Données du projet
+ *
+ * MANDAT:
+ * à définir
+ */
+
+/**
+ * Données du projet (palettes de couleurs et points de rupture)
+ * Écran large: 600px et +
+ */
+
+/**** MANDAT ****/
+
+/* Règles générales */
+
+body > header {
+    background-color: #efefef;
+    margin-bottom: 20px;
+}
+
+body > footer {
+    background-color: #efefef;
+    padding: 1px 0;
+    text-align: center;
+}

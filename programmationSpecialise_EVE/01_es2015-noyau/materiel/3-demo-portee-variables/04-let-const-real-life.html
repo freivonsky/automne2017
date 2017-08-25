@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>let and const real world</title>
+</head>
+<body>
+<script>
+  // Limiter le nombre de variables globales
+  // Pour la performance ET pour éviter les conflits de noms de variables
+
+  // Sur le Window, problème d'espace de nom
+  // https://developer.mozilla.org/en-US/docs/Web/API/Window/name
+    console.log('name: ' + window.name);
+    var name = 'Toto';
+    console.log('name: ' + name);
+
+  // ANCIENNE SOLUTION: IIFE
+  // http://benalman.com/news/2010/11/immediately-invoked-function-expression/
+/*  (function(){
+      var jeanne = 'Jeanne';
+      console.log('DANS IIFE: ' + jeanne);
+  })()
+  console.log('Sur le window: ' + jeanne);*/
+
+  // NOUVELLE SOLUTION:
+  // Utiliser la limite de portée des blocs.
+/*  {
+      const nom = 'Toto';
+      console.log('nom à l\'intérieur du bloc: ' + nom);
+  }
+  console.log('nom à l\'extérieur du bloc: ' + nom);*/
+
+
+  // Autre problème que let et const vont régler
+  // au niveau d'une boucle for
+/*   for(var i = 0; i < 10; i++) {
+      console.log(i);
+      setTimeout(function() {
+        console.log('Le nombre est ' + i);
+      },1000);
+    }*/
+
+  // Solution: changer var pour let
+
+
+</script>
+</body>
+</html>

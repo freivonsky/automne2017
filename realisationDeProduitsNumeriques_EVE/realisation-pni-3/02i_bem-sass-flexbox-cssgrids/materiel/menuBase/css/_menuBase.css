@@ -1,0 +1,119 @@
+/**
+ * @author Prénom Nom courriel
+ * @todo créé le fichier sass pour générer cette css
+ *** @todo utiliser le nichage des pseudo-classes
+ *** @todo utiliser le nichage des sélecteurs BEM
+ *** @todo utiliser le nichage des requêtes media pour placer les variantes de l'écran large dans leur contexte.
+**/
+
+/**
+ * TABLE DES MATIÈRES
+ * Palette de couleurs
+ * Base commune
+ * - Bouton du menu
+ * - Liste du menu
+ * - Liens du menu
+ * Si le javascript est activé
+ * Variantes du menu pour Desktop (601px et +)
+ */
+
+/****** Palette de couleurs *******/
+/*
+Couleur de fond : #d9d7d0
+Effet de survol : #f5ae09
+Effet actif : #f4d07c
+*/
+
+/****** Base commune *******/
+
+/* Bouton du menu */
+.menu__controle {
+    background-color: #d9d7d0;
+    border: none;
+    padding: 10px;
+    min-width: 40px;
+}
+.menu__controle:hover,
+.menu__controle:active {
+    background-color: #f5ae09;
+}
+
+.menu__controle:focus {
+    /**
+     * Les styles du navigateur utilisent la règle outline pour définir
+     * l'état focus des éléments interactifs.
+     * Vous pouvez redéfinir cette règle ou remplacer par d'autres styles
+     * mieux adaptés à la direction visuelle.
+     * MAIS il faut souligner l'état focus et le tester au clavier.
+     */
+    outline-offset: -5px;
+    outline: #f5ae09 auto 5px;
+}
+
+/* Liste du menu */
+.menu__liste {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    max-height: none;
+}
+
+/* Liens du menu */
+.menu__lien {
+    background-color: #d9d7d0;
+    display: block;
+    padding: 5px 10px;
+    width: 100%;
+}
+
+.menu__lien:link,
+.menu__lien:visited {
+    text-decoration: none;
+    color: inherit;
+}
+
+.menu__lien:hover,
+.menu__lien:active {
+    background-color: #f5ae09;
+}
+
+.menu__lien:focus {
+    /*outline: none;
+    border-left: 5px solid #f5ae09;*/
+    outline-offset: -5px;
+    outline: #f5ae09 auto 5px;
+}
+
+.menu__lien--actif {
+    border-left: 5px solid #f4d07c;
+}
+
+/* Si le javascript est activé */
+
+/* Pour des raisons d'accessibilité, on ne cache le menu mobile
+ * que si Javascript est activé. De cette façon, s'il est désactivé,
+ * le menu restera tout de même visible à l'utilisateur.
+ */
+
+.js .menu__liste {
+    max-height: 100vh;
+    overflow: hidden;
+    transition: max-height 0.5s;
+}
+
+.js .menu--ferme .menu__liste {
+    max-height: 0;
+}
+
+
+@media (min-width: 601px) {
+    .menu__controle {
+        display: none;
+    }
+    .menu__listeItem {
+        display: inline-block;
+    }
+    .js .menu--ferme .menu__liste {
+        max-height: none;
+    }
+}

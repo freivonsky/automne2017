@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>let and const</title>
+</head>
+<body>
+<script>
+
+  // la portée de var est la fonction qui l'englobe
+  // si elle n'est pas définie dans une fonction,
+  // sa portée est au niveau du Window ==> variable globale
+  function setWidth() {
+    var width = 100;
+    console.log(width);
+  }
+  setWidth();
+  console.log(width);
+
+  var age = 100;
+  if(age > 12) {
+    var dogYears = age * 7; // dogYears ne devrait pas être une variable globale!
+    console.log('Vous avez ' + dogYears + ' ans, en âge de chien!');
+  }
+  console.log(dogYears);
+
+  // À la différence de var, let et const
+  // ont une portée limitée à un bloc plutôt qu'une fonction
+  //
+  // que devriez-vous utiliser pour déclarer dogYears dans le bloc if ci-dessus?
+  //
+  let height = 200;
+  const key = 'abc123';
+
+</script>
+</body>
+</html>

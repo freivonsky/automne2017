@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>let and const</title>
+</head>
+<body>
+<script>
+  // let et const ont une portée limitée à un bloc
+  const key = 'abc123';
+  let points = 50;
+
+  // on peut changer la valeur d'une variable déclarée avec let
+  points = 60;
+  console.log(points);
+
+  //on ne peut pas re-déclarer une variable déclarée avec let
+  //let points = 70;
+
+  let winner = false;
+  if (points > 40){
+      console.log("ça roule");
+      let winner = true;  // il s'agit d'une autre variable winner
+      console.log(winner);
+  }
+  console.log(winner);
+
+  // on ne peut pas changer la valeur d'une variable déclarée avec const
+  // key = 'xyz456';
+
+  const person = {
+    name: 'Tim',
+    age: 19
+  };
+  console.log(person);
+
+  // on ne peut pas re-déclarer une constante
+  // person = {name: 'Raoul'};
+
+  // par contre on peut mettre à jour les propriétés d'une constante
+  person.name = 'Timmy';
+  console.log(person);
+
+  // si vous avez besoin de figer les propriétés d'une constante,
+  // utilisez freeze()
+  const Timmy = Object.freeze(person);
+  person.name = 'Tim';
+  console.log(person);
+
+</script>
+</body>
+</html>
